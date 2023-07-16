@@ -22,12 +22,12 @@ export function Chat() {
           <CardDescription className="text-zinc-600 dark:text-zinc-400">Ask anything</CardDescription>
         </CardHeader>
         <CardContent>
-            <ScrollArea className="h-[600px] w-full space-y-3 pr-4 rounded-xl bg-zinc-200 dark:bg-zinc-800">
+            <ScrollArea className="h-[600px] w-full pr-4 rounded-xl bg-zinc-200 dark:bg-zinc-800">
                 {messages.map(message => {
                     return (
                             <div key={message.id}>
                                 {message.role === 'user' && (
-                                    <div className='flex gap-2 items-start font-medium text-sm m-5'>
+                                    <div className='flex flex-row-reverse gap-2 items-start font-medium text-sm m-5'>
                                         <Avatar className='shadow-lg border border-zinc-500'>
                                             <AvatarFallback>GB</AvatarFallback>
                                             <AvatarImage src='https://github.com/barrosgusta.png'/>
@@ -37,7 +37,7 @@ export function Chat() {
                                 )}
                                 
                                 {message.role === 'assistant' && (
-                                    <div className='flex flex-row-reverse gap-2 items-start font-medium text-sm m-5'>
+                                    <div className='flex gap-2 items-start font-medium text-sm m-5'>
                                         <Avatar className='shadow-lg border border-zinc-500'>
                                             <AvatarFallback>AI</AvatarFallback>
                                             <AvatarImage src='https://github.com/openai.png'/>
